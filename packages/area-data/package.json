@@ -2,6 +2,9 @@
   "name": "@urcloud/area-data",
   "version": "1.1.1",
   "description": "Convert Vant Area into Element UI Cascader Component data format.",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "area-data",
     "vant-area",
@@ -33,5 +36,6 @@
     "type": "git",
     "url": "https://github.com/zenonux/urcloud"
   },
-  "homepage": "https://github.com/zenonux/urcloud/tree/master/packages/area-data"
+  "homepage": "https://github.com/zenonux/urcloud/tree/master/packages/area-data",
+  "gitHead": "d4600cabfdd497b316656fa65569dd5c7cd25892"
 }
