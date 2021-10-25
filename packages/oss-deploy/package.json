@@ -1,6 +1,6 @@
 {
   "name": "@urcloud/oss-deploy",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Deploy SPA static assests to aliyun oss and server with version manager.",
   "main": "lib/index.js",
   "publishConfig": {
