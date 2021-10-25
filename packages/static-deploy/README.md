@@ -1,22 +1,11 @@
-# ali-oss-deploy
-
-[![NPM version][npm-image]][npm-url]
-[![David deps][david-image]][david-url]
-[![License][license-image]][license-url]
-
-[npm-image]: https://img.shields.io/npm/v/@zenonux/ali-oss-deploy.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/@zenonux/ali-oss-deploy
-[david-image]: https://img.shields.io/david/zenonux/ali-oss-deploy.svg?style=flat-square
-[david-url]: https://david-dm.org/zenonux/ali-oss-deploy
-[license-url]: https://github.com/zenonux/ali-oss-deploy/blob/master/LICENCE
-[license-image]: https://img.shields.io/npm/l/@zenonux/ali-oss-deploy.svg
+# static-deploy
 
 it will upload index.html to Server and upload assets(css,js,img) to aliyun oss with version manager using a local json file.
 
 ## Installation
 
 ```bash
-npm i @urcloud/ali-oss-deploy -D
+npm i @urcloud/static-deploy -D
 ```
 
 ## Basic Usage
