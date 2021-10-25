@@ -1,6 +1,6 @@
 {
   "name": "@urcloud/area-data",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Convert Vant Area into Element UI Cascader Component data format.",
   "keywords": [
     "area-data",
