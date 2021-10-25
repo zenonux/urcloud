@@ -39,18 +39,45 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.isFileExisted = void 0;
-var fs_1 = __importDefault(require("fs"));
-var isFileExisted = function (filePath) { return __awaiter(void 0, void 0, void 0, function () {
-    var has;
+var commander_1 = require("commander");
+var index_1 = __importDefault(require("./index"));
+var program = new commander_1.Command();
+var util_1 = require("./util");
+program
+    .command('upload <mode>')
+    .requiredOption('-c, --config <file>', 'deploy config file', './.deploy.config.json')
+    .description('upload html to server and upload assets to oss')
+    .action(function (mode, opts) { return __awaiter(void 0, void 0, void 0, function () {
+    var client, version;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, fs_1.default.promises.access(filePath, fs_1.default.constants.F_OK | fs_1.default.constants.R_OK).then(function () { return true; })
-                    .catch(function () { return false; })];
+            case 0:
+                client = new index_1.default(opts.config);
+                return [4 /*yield*/, (0, util_1.getVersionFromPackage)()];
             case 1:
-                has = _a.sent();
-                return [2 /*return*/, has];
+                version = _a.sent();
+                return [4 /*yield*/, client.uploadAssetsAndHtml(mode, version)];
+            case 2:
+                _a.sent();
+                return [2 /*return*/];
         }
     });
-}); };
-exports.isFileExisted = isFileExisted;
+}); });
+program
+    .command('clear <mode>')
+    .requiredOption('-c, --config <file>', 'deploy config file', './.deploy.config.json')
+    .description('clear unused assets in oss')
+    .action(function (mode, opts) { return __awaiter(void 0, void 0, void 0, function () {
+    var client;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                client = new index_1.default(opts.config);
+                return [4 /*yield*/, client.clearAssets(mode)];
+            case 1:
+                _a.sent();
+                return [2 /*return*/];
+        }
+    });
+}); });
+program.parse(process.argv);

@@ -1,8 +1,10 @@
 {
-  "name": "@urcloud/static-deploy",
+  "name": "@urcloud/oss-deploy",
   "version": "1.0.2",
   "description": "Deploy SPA static assests to aliyun oss and server with version manager.",
-  "main": "lib/index.js",
+  "bin": {
+    "ossdeploy": "lib/cli.js"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -19,6 +21,7 @@
   "dependencies": {
     "ali-oss": "^6.16.0",
     "chalk": "^4.1.2",
+    "commander": "^8.3.0",
     "inquirer": "^8.1.2",
     "joi": "^17.4.2",
     "jsonfile": "^6.1.0",
@@ -42,6 +45,7 @@
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
     "eslint": "^7.32.0",
+    "ts-node": "^10.4.0",
     "typescript": "^4.4.3"
   }
 }

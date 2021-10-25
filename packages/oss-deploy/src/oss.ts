@@ -4,7 +4,7 @@ import log from "./log";
 import path from "path";
 import readdirp from "readdirp";
 import inquirer from "inquirer";
-import { AliOssConfig, VersionItem } from "./interface";
+import { AliOssConfig, VersionItem } from "./interface"
 
 export default  class AliOSS {
   private distPath:string
