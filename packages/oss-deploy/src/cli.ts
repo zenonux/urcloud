@@ -1,9 +1,9 @@
 #! /usr/bin/env node
 
 import { Command } from 'commander'
-import Aod from '../src/index'
+import Aod from './index'
 const program = new Command()
-import { getVersionFromPackage } from '../src/util'
+import { getVersionFromPackage } from './util'
 
 program
   .command('upload <mode>')

@@ -60,9 +60,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var commander_1 = require("commander");
-var index_1 = __importDefault(require("../src/index"));
+var index_1 = __importDefault(require("./index"));
 var program = new commander_1.Command();
-var util_1 = require("../src/util");
+var util_1 = require("./util");
 program
     .command('upload <mode>')
     .requiredOption('-c, --config <file>', 'deploy config file', './.deploy.config.js')
