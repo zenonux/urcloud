@@ -30,7 +30,7 @@
     "type": "git",
     "url": "https://github.com/zenonux/urcloud"
   },
-  "homepage": "https://github.com/zenonux/urcloud#readme",
+  "homepage": "https://github.com/zenonux/urcloud/tree/master/packages/static-deploy",
   "devDependencies": {
     "@types/ali-oss": "^6.0.10",
     "@types/inquirer": "^7.3.3",

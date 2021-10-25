@@ -1,0 +1,11 @@
+{
+  "name": "urcloud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [
+    "urcloud"
+  ],
+  "author": "zenonux",
+  "license": "MIT"
+}
