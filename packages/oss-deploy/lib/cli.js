@@ -63,6 +63,7 @@ var commander_1 = require("commander");
 var index_1 = __importDefault(require("./index"));
 var program = new commander_1.Command();
 var util_1 = require("./util");
+var path_1 = __importDefault(require("path"));
 program
     .command('upload <mode>')
     .requiredOption('-c, --config <file>', 'deploy config file', './.deploy.config.js')
@@ -71,7 +72,7 @@ program
     var config, client, version;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, Promise.resolve().then(function () { return __importStar(require(opts.config)); })];
+            case 0: return [4 /*yield*/, Promise.resolve().then(function () { return __importStar(require(path_1.default.resolve(process.cwd(), opts.config))); })];
             case 1:
                 config = _a.sent();
                 client = new index_1.default(config);
@@ -93,7 +94,7 @@ program
     var config, client;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, Promise.resolve().then(function () { return __importStar(require(opts.config)); })];
+            case 0: return [4 /*yield*/, Promise.resolve().then(function () { return __importStar(require(path_1.default.resolve(process.cwd(), opts.config))); })];
             case 1:
                 config = _a.sent();
                 client = new index_1.default(config);
