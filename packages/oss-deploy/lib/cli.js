@@ -65,9 +65,9 @@ var program = new commander_1.Command();
 var util_1 = require("./util");
 var path_1 = __importDefault(require("path"));
 program
-    .command('upload <mode>')
-    .requiredOption('-c, --config <file>', 'deploy config file', './.deploy.config.js')
-    .description('upload html to server and upload assets to oss')
+    .command("upload <mode>")
+    .requiredOption("-c, --config <file>", "deploy config file", "./.deploy.config.js")
+    .description("upload html to server and upload assets to oss")
     .action(function (mode, opts) { return __awaiter(void 0, void 0, void 0, function () {
     var config, client, version;
     return __generator(this, function (_a) {
@@ -87,9 +87,9 @@ program
     });
 }); });
 program
-    .command('clear <mode>')
-    .requiredOption('-c, --config <file>', 'deploy config file', './.deploy.config.js')
-    .description('clear unused assets in oss')
+    .command("clear <mode>")
+    .requiredOption("-c, --config <file>", "deploy config file", "./.deploy.config.js")
+    .description("clear unused assets in oss")
     .action(function (mode, opts) { return __awaiter(void 0, void 0, void 0, function () {
     var config, client;
     return __generator(this, function (_a) {

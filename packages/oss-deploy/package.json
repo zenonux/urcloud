@@ -3,13 +3,14 @@
   "version": "1.0.9",
   "description": "Deploy SPA static assests to aliyun oss and server with version manager.",
   "bin": {
-    "ossdeploy": "lib/cli.js"
+    "oss-deploy": "lib/cli.js"
   },
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "eslint . --ext .ts,.tsx"
   },
   "author": "zenonux",
   "license": "MIT",
@@ -45,6 +46,9 @@
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
     "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.3"
   }

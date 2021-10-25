@@ -1,4 +1,4 @@
-import { ModeType } from './interface';
+import { ModeType } from "./types";
 interface VersionItem {
     version: string;
     release_time: string;

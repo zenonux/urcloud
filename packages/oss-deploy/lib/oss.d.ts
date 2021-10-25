@@ -1,4 +1,4 @@
-import { AliOssConfig, VersionItem } from "./interface";
+import { AliOssConfig, VersionItem } from "./types";
 export default class AliOSS {
     private distPath;
     private client;

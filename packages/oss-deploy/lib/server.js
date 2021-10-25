@@ -53,8 +53,8 @@ var Server = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        localHtml = path_1.default.resolve(this.distPath, 'index.html');
-                        remoteHtml = path_1.default.posix.join(serverConfig.serverPath, 'index.html');
+                        localHtml = path_1.default.resolve(this.distPath, "index.html");
+                        remoteHtml = path_1.default.posix.join(serverConfig.serverPath, "index.html");
                         if (!(0, util_1.isFileExisted)(localHtml)) {
                             throw new Error(localHtml + " is not found.");
                         }
@@ -80,7 +80,7 @@ var Server = /** @class */ (function () {
         return new Promise(function (resolve, reject) {
             var ssh2Client = new ssh2_1.Client();
             ssh2Client
-                .on('ready', function () {
+                .on("ready", function () {
                 ssh2Client.sftp(function (err, sftp) {
                     if (err) {
                         ssh2Client.end();
@@ -96,7 +96,7 @@ var Server = /** @class */ (function () {
                     });
                 });
             })
-                .on('error', function (err) {
+                .on("error", function (err) {
                 reject(err);
             })
                 .connect({

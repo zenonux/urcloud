@@ -61,7 +61,7 @@ var getVersionFromPackage = function () { return __awaiter(void 0, void 0, void 
     var data;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, jsonfile_1.default.readFile('./package.json')];
+            case 0: return [4 /*yield*/, jsonfile_1.default.readFile("./package.json")];
             case 1:
                 data = _a.sent();
                 return [2 /*return*/, data.version];

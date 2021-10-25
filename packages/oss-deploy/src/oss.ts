@@ -4,12 +4,12 @@ import log from "./log";
 import path from "path";
 import readdirp from "readdirp";
 import inquirer from "inquirer";
-import { AliOssConfig, VersionItem } from "./interface"
+import { AliOssConfig, VersionItem } from "./types";
 
-export default  class AliOSS {
-  private distPath:string
-  private client
-  constructor(distPath:string, config:AliOssConfig) {
+export default class AliOSS {
+  private distPath: string;
+  private client;
+  constructor(distPath: string, config: AliOssConfig) {
     this.distPath = distPath;
     this.client = new OSS({
       region: config.region,
@@ -19,7 +19,7 @@ export default  class AliOSS {
     });
   }
 
-  async uploadAssets(prefix:string):Promise<void> {
+  async uploadAssets(prefix: string): Promise<void> {
     const spinner = ora(`Start deploying ${prefix} assets...`).start();
     const dirPath = path.resolve(this.distPath);
     for await (const entry of readdirp(dirPath)) {
@@ -28,44 +28,47 @@ export default  class AliOSS {
         const relativePath = path.relative(dirPath, fullPath);
         const prefixPath = prefix + "/" + relativePath;
         await this.client.put(prefixPath.replace("\\", "/"), fullPath);
-      } catch (e:any) {
+      } catch (e: any) {
         spinner.fail();
-        throw new Error(e)
+        throw new Error(e);
       }
     }
     spinner.succeed(`Deploy ${prefix} assets succeed.`);
   }
 
-  async handleDel(name:string) : Promise<any> {
+  async handleDel(name: string): Promise<any> {
     try {
       await this.client.delete(name);
-    } catch (error:any) {
+    } catch (error: any) {
       error.failObjectName = name;
       return error;
     }
   }
 
-  async deleteAssets(prefix:string):Promise<boolean> {
+  async deleteAssets(prefix: string): Promise<boolean> {
     if (!prefix) {
       return false;
     }
     const spinner = ora(`Start removing ${prefix} assest...`).start();
     try {
-      const list = await this.client.list({
-        prefix: prefix,
-        'max-keys': 100
-      },{});
+      const list = await this.client.list(
+        {
+          prefix: prefix,
+          "max-keys": 100,
+        },
+        {}
+      );
       list.objects = list.objects || [];
       await Promise.all(list.objects.map((v) => this.handleDel(v.name)));
       spinner.succeed(`Remove ${prefix} assets succeed.`);
       return true;
-    } catch (e:any) {
+    } catch (e: any) {
       spinner.fail(e);
       return false;
     }
   }
 
-  async clearAllUnNeedAssests(dirList:VersionItem[]):Promise<boolean> {
+  async clearAllUnNeedAssests(dirList: VersionItem[]): Promise<boolean> {
     if (dirList.length <= 0) {
       return false;
     }
@@ -92,4 +95,3 @@ export default  class AliOSS {
     return true;
   }
 }
-

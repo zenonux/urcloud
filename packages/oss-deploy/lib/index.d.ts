@@ -1,4 +1,4 @@
-import { Config, ModeType } from './interface';
+import { Config, ModeType } from "./types";
 export default class Aod {
     private config;
     private oss;

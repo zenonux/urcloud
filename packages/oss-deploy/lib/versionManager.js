@@ -81,7 +81,7 @@ var VersionManager = /** @class */ (function () {
                     case 2: return [4 /*yield*/, jsonfile_1.default.writeFile(this.jsonPath, data, {
                             mode: 438,
                             spaces: 2,
-                            EOL: '\r\n',
+                            EOL: "\r\n",
                         })];
                     case 3:
                         _a.sent();
@@ -171,7 +171,7 @@ var VersionManager = /** @class */ (function () {
                         return [4 /*yield*/, this.writeJsonFile(list)];
                     case 4:
                         _a.sent();
-                        spinner.succeed('Write version in json file successfully.');
+                        spinner.succeed("Write version in json file successfully.");
                         return [2 /*return*/, prefix];
                     case 5:
                         e_4 = _a.sent();

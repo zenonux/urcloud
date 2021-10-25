@@ -67,11 +67,11 @@ var Aod = /** @class */ (function () {
                             log_1.default.error(prefix + " has been uploaded already,please check your version!");
                             return [2 /*return*/];
                         }
-                        if (!(mode == 'prod')) return [3 /*break*/, 3];
+                        if (!(mode == "prod")) return [3 /*break*/, 3];
                         return [4 /*yield*/, inquirer_1.default.prompt([
                                 {
-                                    type: 'confirm',
-                                    name: 'release',
+                                    type: "confirm",
+                                    name: "release",
                                     message: "confirm releasing " + prefix + "?",
                                     default: false,
                                 },
@@ -89,9 +89,7 @@ var Aod = /** @class */ (function () {
                         return [4 /*yield*/, this.server.uploadHtml(serverConfig)];
                     case 5:
                         _a.sent();
-                        return [4 /*yield*/, this.versionManager.addVersion(prefix)
-                            // need  clear version warning
-                        ];
+                        return [4 /*yield*/, this.versionManager.addVersion(prefix)];
                     case 6:
                         _a.sent();
                         return [4 /*yield*/, this.versionManager.getNeedClearVersions(mode, this.config.maxVersionCountOfMode)];
@@ -114,14 +112,14 @@ var Aod = /** @class */ (function () {
                     case 1:
                         prefixList = _a.sent();
                         if (prefixList.length <= 0) {
-                            log_1.default.warn('No assets need to clear.');
+                            log_1.default.warn("No assets need to clear.");
                             return [2 /*return*/];
                         }
-                        if (!(mode == 'prod')) return [3 /*break*/, 3];
+                        if (!(mode == "prod")) return [3 /*break*/, 3];
                         return [4 /*yield*/, inquirer_1.default.prompt([
                                 {
-                                    type: 'confirm',
-                                    name: 'release',
+                                    type: "confirm",
+                                    name: "release",
                                     message: "confirm clearing unused assets?",
                                     default: false,
                                 },
@@ -149,8 +147,8 @@ var Aod = /** @class */ (function () {
     };
     Aod.prototype.validateConfig = function (opts) {
         var schema = joi_1.default.object({
-            distPath: joi_1.default.string().default('./dist'),
-            jsonPath: joi_1.default.string().default('./deploy.version.json'),
+            distPath: joi_1.default.string().default("./dist"),
+            jsonPath: joi_1.default.string().default("./deploy.version.json"),
             maxVersionCountOfMode: joi_1.default.number().default(5),
             oss: joi_1.default.object({
                 accessKeyId: joi_1.default.string().required(),

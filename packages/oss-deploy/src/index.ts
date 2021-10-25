@@ -1,68 +1,68 @@
-import log from './log'
-import VersionManager from './versionManager'
-import AliOSS from './oss'
-import Server from './server'
-import inquirer from 'inquirer'
-import { Config, ModeType } from './interface'
-import Joi from 'joi'
+import log from "./log";
+import VersionManager from "./versionManager";
+import AliOSS from "./oss";
+import Server from "./server";
+import inquirer from "inquirer";
+import { Config, ModeType } from "./types";
+import Joi from "joi";
 
 export default class Aod {
-  private config: Config
-  private oss
-  private server
-  private versionManager
+  private config: Config;
+  private oss;
+  private server;
+  private versionManager;
 
   constructor(opts: Config) {
-    this.config = this.validateConfig(opts)
-    this.oss = new AliOSS(this.config.distPath, this.config.oss)
-    this.server = new Server(this.config.distPath)
-    this.versionManager = new VersionManager(this.config.jsonPath)
+    this.config = this.validateConfig(opts);
+    this.oss = new AliOSS(this.config.distPath, this.config.oss);
+    this.server = new Server(this.config.distPath);
+    this.versionManager = new VersionManager(this.config.jsonPath);
   }
 
   public async uploadAssetsAndHtml(
     mode: ModeType,
     version: string
   ): Promise<undefined | void> {
-    const serverConfig = this.config[mode]
-    const prefix = this.config.oss.prefix(mode, version)
+    const serverConfig = this.config[mode];
+    const prefix = this.config.oss.prefix(mode, version);
 
-    const isHasVersion = await this.versionManager.checkHasVersion(prefix)
+    const isHasVersion = await this.versionManager.checkHasVersion(prefix);
     if (isHasVersion) {
       log.error(
         `${prefix} has been uploaded already,please check your version!`
-      )
-      return
+      );
+      return;
     }
 
     // releasing production version needs confirm operation
-    if (mode == 'prod') {
+    if (mode == "prod") {
       const answer = await inquirer.prompt([
         {
-          type: 'confirm',
-          name: 'release',
+          type: "confirm",
+          name: "release",
           message: `confirm releasing ${prefix}?`,
           default: false,
         },
-      ])
+      ]);
       if (!answer.release) {
-        log.warn(`releasing ${prefix} has been cancelled.`)
-        return
+        log.warn(`releasing ${prefix} has been cancelled.`);
+        return;
       }
     }
 
-    await this.oss.uploadAssets(prefix)
-    await this.server.uploadHtml(serverConfig)
-    await this.versionManager.addVersion(prefix)
+    await this.oss.uploadAssets(prefix);
+    await this.server.uploadHtml(serverConfig);
+    await this.versionManager.addVersion(prefix);
 
     // need  clear version warning
     const dirList = await this.versionManager.getNeedClearVersions(
       mode,
       this.config.maxVersionCountOfMode
-    )
+    );
     if (dirList.length >= this.config.maxVersionCountOfMode) {
       log.warn(
         `Static assets in ${mode} environment already has ${dirList.length} versions,please clear unused versions regularly.`
-      )
+      );
     }
   }
 
@@ -70,37 +70,37 @@ export default class Aod {
     const prefixList = await this.versionManager.getNeedClearVersions(
       mode,
       this.config.maxVersionCountOfMode
-    )
+    );
     if (prefixList.length <= 0) {
-      log.warn('No assets need to clear.')
-      return
+      log.warn("No assets need to clear.");
+      return;
     }
     // clearing production assets needs confirm operation
-    if (mode == 'prod') {
+    if (mode == "prod") {
       const answer = await inquirer.prompt([
         {
-          type: 'confirm',
-          name: 'release',
+          type: "confirm",
+          name: "release",
           message: `confirm clearing unused assets?`,
           default: false,
         },
-      ])
+      ]);
       if (!answer.release) {
-        log.warn(`clearing assets has been cancelled.`)
-        return
+        log.warn(`clearing assets has been cancelled.`);
+        return;
       }
     }
-    const isSuccess = await this.oss.clearAllUnNeedAssests(prefixList)
+    const isSuccess = await this.oss.clearAllUnNeedAssests(prefixList);
     if (!isSuccess) {
-      return
+      return;
     }
-    await this.versionManager.deleteVersions(prefixList)
+    await this.versionManager.deleteVersions(prefixList);
   }
 
   private validateConfig(opts: Config): Config {
     const schema = Joi.object({
-      distPath: Joi.string().default('./dist'),
-      jsonPath: Joi.string().default('./deploy.version.json'),
+      distPath: Joi.string().default("./dist"),
+      jsonPath: Joi.string().default("./deploy.version.json"),
       maxVersionCountOfMode: Joi.number().default(5),
       oss: Joi.object({
         accessKeyId: Joi.string().required(),
@@ -125,12 +125,12 @@ export default class Aod {
       })
         .unknown(true)
         .required(),
-    }).unknown(true)
-    const validateRes = schema.validate(opts)
+    }).unknown(true);
+    const validateRes = schema.validate(opts);
     if (validateRes.error) {
-      console.error(validateRes.error)
-      process.exit()
+      console.error(validateRes.error);
+      process.exit();
     }
-    return validateRes.value
+    return validateRes.value;
   }
 }

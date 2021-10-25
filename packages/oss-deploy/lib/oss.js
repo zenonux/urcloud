@@ -155,7 +155,7 @@ var AliOSS = /** @class */ (function () {
                         _a.trys.push([1, 4, , 5]);
                         return [4 /*yield*/, this.client.list({
                                 prefix: prefix,
-                                'max-keys': 100
+                                "max-keys": 100,
                             }, {})];
                     case 2:
                         list = _a.sent();

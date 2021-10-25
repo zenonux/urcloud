@@ -4,11 +4,12 @@
   "plugins": ["@typescript-eslint"],
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
   ],
   "rules": {
-    "no-console": "off"
+    "no-console": "off",
+    "@typescript-eslint/no-explicit-any": ["off"]
   },
   // set eslint env
   "env": {

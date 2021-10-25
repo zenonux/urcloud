@@ -1,4 +1,4 @@
-import { ServerConfig } from './interface';
+import { ServerConfig } from "./types";
 export default class Server {
     private distPath;
     constructor(distPath: string);
