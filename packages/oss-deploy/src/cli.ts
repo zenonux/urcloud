@@ -29,7 +29,8 @@ program
   )
   .description('clear unused assets in oss')
   .action(async (mode, opts) => {
-    const client = new Aod(opts.config)
+    const config = await import(opts.config)
+    const client = new Aod(config)
     await client.clearAssets(mode)
   })
 

@@ -90,13 +90,15 @@ program
     .requiredOption('-c, --config <file>', 'deploy config file', './.deploy.config.js')
     .description('clear unused assets in oss')
     .action(function (mode, opts) { return __awaiter(void 0, void 0, void 0, function () {
-    var client;
+    var config, client;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0:
-                client = new index_1.default(opts.config);
-                return [4 /*yield*/, client.clearAssets(mode)];
+            case 0: return [4 /*yield*/, Promise.resolve().then(function () { return __importStar(require(opts.config)); })];
             case 1:
+                config = _a.sent();
+                client = new index_1.default(config);
+                return [4 /*yield*/, client.clearAssets(mode)];
+            case 2:
                 _a.sent();
                 return [2 /*return*/];
         }
