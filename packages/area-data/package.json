@@ -1,9 +1,9 @@
 {
-  "name": "@urcloud/china-area-data",
+  "name": "@urcloud/area-data",
   "version": "1.1.0",
   "description": "Convert Vant Area into Element UI Cascader Component data format.",
   "keywords": [
-    "china-area-data",
+    "area-data",
     "vant-area",
     "element-ui",
     "element-plus"
@@ -31,7 +31,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zenonux/china-area-data"
+    "url": "https://github.com/zenonux/urcloud"
   },
-  "homepage": "https://github.com/zenonux/china-area-data#readme"
+  "homepage": "https://github.com/zenonux/urcloud/tree/master/packages/area-data"
 }
