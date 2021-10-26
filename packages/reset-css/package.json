@@ -1,7 +1,7 @@
 {
   "name": "@urcloud/reset-css",
   "version": "1.0.5",
-  "description": "Reset browsers' default style",
+  "description": "Reset browsers' default style.",
   "main": "reset.css",
   "style": "reset.css",
   "keywords": [
