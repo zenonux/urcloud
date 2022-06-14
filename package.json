@@ -2,10 +2,10 @@
   "name": "root",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "play"
   ],
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "publish": "lerna publish"
+    "dev": "pnpm -C play dev"
   }
 }
