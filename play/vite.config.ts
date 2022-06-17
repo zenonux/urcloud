@@ -5,6 +5,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Inspect from 'vite-plugin-inspect'
+import mkcert from 'vite-plugin-mkcert'
 import glob from 'fast-glob'
 import DefineOptions from 'unplugin-vue-define-options/vite'
 import esbuild from 'rollup-plugin-esbuild'
@@ -14,7 +15,7 @@ import {
   getPackageDependencies,
   pkgRoot,
   projRoot,
-} from './build-utils'
+} from '@urcloud/build-utils'
 import './vite.init'
 
 const esbuildPlugin = () => ({
@@ -65,6 +66,7 @@ export default defineConfig(async ({ mode }) => {
         resolvers: ElementPlusResolver({ importStyle: 'sass' }),
         dts: false,
       }),
+      mkcert(),
       Inspect(),
     ],
 

@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import '@element-plus/theme-chalk/src/index.scss'
+import '@urcloud/theme-chalk/src/index.scss'
 ;(async () => {
   const apps = import.meta.glob('./src/*.vue')
   const name = location.pathname.replace(/^\//, '') || 'App'
