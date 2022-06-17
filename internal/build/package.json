@@ -1,5 +1,5 @@
 {
-  "name": "@element-plus/build",
+  "name": "@urcloud/build",
   "version": "0.0.1",
   "private": true,
   "description": "Build Toolchain for Element Plus",
@@ -15,7 +15,7 @@
     "vue": "^3.2.25"
   },
   "dependencies": {
-    "@element-plus/build-constants": "^0.0.1",
+    "@urcloud/build-constants": "^0.0.1",
     "@pnpm/find-workspace-packages": "^4.0.10",
     "@pnpm/logger": "^4.0.0",
     "@rollup/plugin-commonjs": "^22.0.0",

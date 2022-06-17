@@ -1,5 +1,5 @@
 {
-  "name": "@element-plus/build-constants",
+  "name": "@urcloud/build-constants",
   "version": "0.0.1",
   "description": "Build constants for Element Plus",
   "keywords": [

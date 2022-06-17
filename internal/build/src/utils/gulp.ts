@@ -1,4 +1,4 @@
-import { buildRoot } from '@element-plus/build-utils'
+import { buildRoot } from '@urcloud/build-utils'
 import { run } from './process'
 
 import type { TaskFunction } from 'gulp'

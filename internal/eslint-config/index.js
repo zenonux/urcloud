@@ -248,7 +248,7 @@ module.exports = defineConfig({
             position: 'before',
           },
           {
-            pattern: '@element-plus/**',
+            pattern: '@urcloud/**',
             group: 'internal',
           },
         ],
