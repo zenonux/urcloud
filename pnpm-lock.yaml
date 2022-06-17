@@ -14,7 +14,12 @@ importers:
     specifiers: {}
 
   packages/urcloud:
-    specifiers: {}
+    specifiers:
+      dayjs: ^1.11.3
+      vue: ^3.2.37
+    devDependencies:
+      dayjs: 1.11.3
+      vue: 3.2.37
 
   packages/utils:
     specifiers:
@@ -173,6 +178,10 @@ packages:
 
   /csstype/2.6.20:
     resolution: {integrity: sha512-/WwNkdXfckNgw6S5R125rrW8ez139lBHWouiBvX8dfMFtcn6V81REDqnH7+CRpRipfYlyU1CmOnOxrmGcFOjeA==}
+
+  /dayjs/1.11.3:
+    resolution: {integrity: sha512-xxwlswWOlGhzgQ4TKzASQkUhqERI3egRNqgV4ScR8wlANA/A9tZ7miXa44vTTKEq5l7vWoL5G57bG3zA+Kow0A==}
+    dev: true
 
   /esbuild-android-64/0.14.45:
     resolution: {integrity: sha512-krVmwL2uXQN1A+Ci4u2MR+Y0IAvQK0u3no5TsgguHVhTy138szjuohScCGjkpvLCpGLk7P4kFP1LKuntvJ0d4A==}
