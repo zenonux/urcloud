@@ -3,7 +3,7 @@
   "workspaces": [
     "packages/*",
     "play",
-    "build"
+    "internal/*"
   ],
   "scripts": {
     "dev": "pnpm -C play dev",
