@@ -8,7 +8,7 @@ export function ElementPlusAlias(): Plugin {
   const bundleThemeChalk = `${PKG_NAME}/${themeChalk}` as const
 
   return {
-    name: 'element-plus-alias-plugin',
+    name: 'urcloud-alias-plugin',
     resolveId(id) {
       if (!id.startsWith(sourceThemeChalk)) return
       return {

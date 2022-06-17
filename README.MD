@@ -1,6 +1,6 @@
 # URCloud
 
-致力于前端开发常用功能增强，弥补 vant，element-plus 等 UI 组件库的不足。
+致力于前端开发常用功能增强，弥补 vant，urcloud 等 UI 组件库的不足。
 
 ## 生态
 

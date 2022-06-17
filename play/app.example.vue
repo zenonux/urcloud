@@ -1,6 +1,6 @@
 <template>
   <div class="play-container">
-    <el-button>test</el-button>
+    test
     <div v-loading="true" />
   </div>
 </template>

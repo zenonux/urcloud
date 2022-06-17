@@ -1,2 +1,2 @@
-import '@element-plus/components/base/style'
-import '@element-plus/theme-chalk/src/button.scss'
+import '@urcloud/components/base/style'
+import '@urcloud/theme-chalk/src/button.scss'

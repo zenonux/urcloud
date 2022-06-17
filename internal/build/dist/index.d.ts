@@ -1,2 +1,2 @@
-export * from 'E:/OpenSource/element-plus/internal/build/src/index';
-export { default } from 'E:/OpenSource/element-plus/internal/build/src/index';
+export * from 'E:/OpenSource/urcloud/internal/build/src/index';
+export { default } from 'E:/OpenSource/urcloud/internal/build/src/index';

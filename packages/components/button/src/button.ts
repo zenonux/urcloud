@@ -1,6 +1,6 @@
-import { useSizeProp } from '@element-plus/hooks'
-import { buildProps, iconPropType } from '@element-plus/utils'
-import { Loading } from '@element-plus/icons-vue'
+import { useSizeProp } from '@urcloud/hooks'
+import { buildProps, iconPropType } from '@urcloud/utils'
+import { Loading } from '@urcloud/icons-vue'
 import type { ExtractPropTypes } from 'vue'
 import type button from './button.vue'
 

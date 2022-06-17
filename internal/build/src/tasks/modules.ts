@@ -8,7 +8,7 @@ import esbuild from 'rollup-plugin-esbuild'
 import glob from 'fast-glob'
 import { epRoot, excludeFiles, pkgRoot } from '@urcloud/build-utils'
 import { generateExternal, writeBundles } from '../utils'
-import { ElementPlusAlias } from '../plugins/element-plus-alias'
+import { ElementPlusAlias } from '../plugins/urcloud-alias'
 import { buildConfigEntries, target } from '../build-info'
 
 import type { OutputOptions } from 'rollup'

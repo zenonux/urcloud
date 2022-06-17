@@ -15,8 +15,8 @@ import {
   PKG_CAMELCASE_NAME,
 } from '@urcloud/build-constants'
 import { epOutput, epRoot, localeRoot } from '@urcloud/build-utils'
-import { version } from '../../../../packages/element-plus/version'
-import { ElementPlusAlias } from '../plugins/element-plus-alias'
+import { version } from '../../../../packages/urcloud/version'
+import { ElementPlusAlias } from '../plugins/urcloud-alias'
 import {
   formatBundleFilename,
   generateExternal,

@@ -92,7 +92,7 @@ async function addSourceFiles(project: Project) {
 
   const globSourceFile = '**/*.{js?(x),ts?(x),vue}'
   const filePaths = excludeFiles(
-    await glob([globSourceFile, '!element-plus/**/*'], {
+    await glob([globSourceFile, '!urcloud/**/*'], {
       cwd: pkgRoot,
       absolute: true,
       onlyFiles: true,

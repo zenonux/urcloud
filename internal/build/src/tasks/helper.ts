@@ -22,7 +22,7 @@ const reComponentName: ReComponentName = (title: string) =>
     .toLowerCase()}`
 
 const reDocUrl: ReDocUrl = (fileName, header) => {
-  const docs = 'https://element-plus.org/en-US/component/'
+  const docs = 'https://urcloud.org/en-US/component/'
   const _header = header ? header.replaceAll(/\s+/g, '-').toLowerCase() : ''
 
   return `${docs}${fileName}.html${_header ? '#' : ''}${_header}`
