@@ -1,11 +1,8 @@
 {
-  "name": "@element-plus/build-utils",
+  "name": "@urcloud/build-utils",
   "version": "0.0.1",
   "private": true,
-  "description": "Build utils for Element Plus",
-  "keywords": [
-    "element-plus"
-  ],
+  "description": "Build utils for URCloud",
   "license": "MIT",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
