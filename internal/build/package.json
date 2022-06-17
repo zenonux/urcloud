@@ -36,6 +36,7 @@
     "unplugin-vue-define-options": "^0.6.1"
   },
   "devDependencies": {
+    "vite": "^2.9.9",
     "@esbuild-kit/cjs-loader": "^2.0.1",
     "@pnpm/types": "^8.0.1",
     "unbuild": "^0.7.4",
