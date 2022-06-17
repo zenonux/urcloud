@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@urcloud/components": "workspace:*",
+    "@urcloud/hooks": "workspace:*",
     "@urcloud/utils": "workspace:*"
   },
   "peerDependencies": {
