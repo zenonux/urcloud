@@ -6,12 +6,15 @@
   ],
   "scripts": {
     "dev": "pnpm -C play dev",
-    "build": "pnpm run -C internal/build start"
+    "build": "pnpm run -C internal/build start",
+    "clean:dist": "rimraf dist",
+    "clean": "pnpm run clean:dist && pnpm run -r --parallel clean"
   },
   "dependencies": {
     "@urcloud/components": "workspace:*"
   },
   "devDependencies": {
+    "rimraf": "^3.0.2",
     "vue": "^3.2.37",
     "unplugin-vue-define-options": "^0.6.1",
     "@vitejs/plugin-vue": "^2.3.3",

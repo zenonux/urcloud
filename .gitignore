@@ -1,3 +1,8 @@
 node_modules/
 *.log
 .DS_Store
+
+# Bundle
+dist
+coverage
+packages/urcloud/version.ts
