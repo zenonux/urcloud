@@ -6,11 +6,9 @@ importers:
     specifiers:
       '@urcloud/components': workspace:*
       '@urcloud/utils': workspace:*
-      vue: ^3.2.0
     dependencies:
       '@urcloud/components': link:packages/components
       '@urcloud/utils': link:packages/utils
-      vue: 3.2.37
 
   packages/components:
     specifiers: {}
