@@ -6,13 +6,10 @@
   ],
   "scripts": {
     "dev": "pnpm -C play dev",
-    "build": "pnpm run -C internal/build start",
-    "clean:dist": "rimraf dist",
-    "clean": "pnpm run clean:dist && pnpm run -r --parallel clean"
+    "build": "pnpm run -C internal/build start"
   },
   "dependencies": {
-    "@urcloud/components": "workspace:*",
-    "dayjs": "^1.11.3"
+    "@urcloud/components": "workspace:*"
   },
   "devDependencies": {
     "rimraf": "^3.0.2",
