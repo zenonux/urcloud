@@ -11,7 +11,8 @@
     "clean": "pnpm run clean:dist && pnpm run -r --parallel clean"
   },
   "dependencies": {
-    "@urcloud/components": "workspace:*"
+    "@urcloud/components": "workspace:*",
+    "dayjs": "^1.11.3"
   },
   "devDependencies": {
     "rimraf": "^3.0.2",
