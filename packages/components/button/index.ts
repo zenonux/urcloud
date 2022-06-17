@@ -1,7 +1,7 @@
 import { withInstall } from '@urcloud/utils'
-import Button from './src/button.vue'
+import Button from './button.vue'
 
-export const ElButton = withInstall(Button)
-export default ElButton
+export const UrButton = withInstall(Button)
+export default UrButton
 
-export * from './src/button'
+export * from './button'
