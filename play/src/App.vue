@@ -7,7 +7,6 @@ import { UrButton } from '@urcloud/components'
 
 <template>
 <div class="test">
-  hello
   <UrButton>test button</UrButton>
 </div>
 </template>
