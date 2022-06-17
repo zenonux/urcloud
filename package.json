@@ -9,6 +9,7 @@
     "dev": "pnpm -C play dev"
   },
   "dependencies": {
+    "vue": "^3.2.0",
     "@urcloud/components": "workspace:*",
     "@urcloud/utils": "workspace:*"
   },
