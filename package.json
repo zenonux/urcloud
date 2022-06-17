@@ -9,21 +9,10 @@
     "build": "pnpm run -C internal/build start"
   },
   "dependencies": {
-    "@urcloud/components": "workspace:*"
+    "@urcloud/components": "workspace:*",
+    "@urcloud/utils": "workspace:*"
   },
-  "devDependencies": {
-    "rimraf": "^3.0.2",
-    "vue": "^3.2.37",
-    "unplugin-vue-define-options": "^0.6.1",
-    "@vitejs/plugin-vue": "^2.3.3",
-    "@vitejs/plugin-vue-jsx": "^1.3.10",
-    "@urcloud/build-utils": "workspace:^0.0.1"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "vite"
-      ]
-    }
+  "peerDependencies": {
+    "vue": "^3.2.0"
   }
 }
