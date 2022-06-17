@@ -2,11 +2,11 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "play"
+    "play",
+    "internal"
   ],
   "scripts": {
-    "dev": "pnpm -C play dev",
-    "build": "pnpm run -C internal/build start"
+    "dev": "pnpm -C play dev"
   },
   "dependencies": {
     "@urcloud/components": "workspace:*",
